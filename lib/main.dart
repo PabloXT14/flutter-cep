@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cep/core/theme/app_theme.dart';
+import 'package:flutter_cep/ui/home/home_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -14,11 +15,9 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
       title: 'Consulta de CEP',
-      home: Scaffold(
-        body: const Center(child: Text('Consulta de CEP')),
-      ),
+      home: const HomeScreen(),
     );
   }
 }
