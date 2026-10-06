@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cep/ui/home/widgets/address.dart';
 import 'package:flutter_cep/ui/home/widgets/header.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -43,6 +44,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 label: Text('Buscar CEP'),
               ),
             ),
+
+            Address(),
           ],
         ),
       ),

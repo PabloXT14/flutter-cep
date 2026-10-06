@@ -19,7 +19,7 @@ class AppTextStyles._() {
 
   static TextStyle get headingXs => GoogleFonts.nunito(
     fontSize: 18,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w700,
   );
 
   static TextStyle get bodyLg => GoogleFonts.nunito(
