@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cep/core/theme/app_colors.dart';
+import 'package:flutter_cep/domain/models/cep_model.dart';
 
 class Address extends StatelessWidget {
-  const Address({super.key});
+  final CepModel? cepModel;
+
+  const Address({super.key, required this.cepModel});
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+
+    if (cepModel == null) {
+      return SizedBox.shrink();
+    }
 
     return Column(
       spacing: 24,
@@ -52,10 +60,50 @@ class Address extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           spacing: 16,
           children: [
-            _InfoCard(),
-            _InfoCard(),
-            _InfoCard(),
-            _InfoCard(),
+            _InfoCard(
+              icon: Icons.location_on_rounded,
+              color: theme.colorScheme.primary,
+              title: 'CEP',
+              subtitle: cepModel!.cep,
+            ),
+
+            _InfoCard(
+              icon: Icons.streetview_rounded,
+              color: theme.colorScheme.secondary,
+              title: 'Logradouro',
+              subtitle: cepModel!.logradouro,
+            ),
+
+            _InfoCard(
+              icon: Icons.home_rounded,
+              color: theme.colorScheme.tertiary,
+              title: 'Bairro',
+              subtitle: cepModel!.bairro,
+            ),
+
+            _InfoCard(
+              icon: Icons.location_city_rounded,
+              color: AppColors.success,
+              title: 'Cidade',
+              subtitle: cepModel!.localidade,
+            ),
+
+            _InfoCard(
+              icon: Icons.map_rounded,
+              color: AppColors.warning,
+              title: 'Estado',
+              subtitle: cepModel!.estado,
+            ),
+
+            if (cepModel!.complemento.isNotEmpty)
+              _InfoCard(
+                icon: Icons.info_rounded,
+                color: Colors.purple,
+                title: 'Complemento',
+                subtitle: cepModel!.complemento,
+              ),
+
+            SizedBox(height: 32),
           ],
         ),
       ],
@@ -64,7 +112,17 @@ class Address extends StatelessWidget {
 }
 
 class _InfoCard extends StatelessWidget {
-  const _InfoCard();
+  final IconData icon;
+  final Color color;
+  final String title;
+  final String subtitle;
+
+  const _InfoCard({
+    required this.icon,
+    required this.color,
+    required this.title,
+    required this.subtitle,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -75,13 +133,13 @@ class _InfoCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(
-          color: Colors.black.withValues(alpha: 0.2),
+          color: color.withValues(alpha: 0.2),
           width: 1,
         ),
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.1),
+            color: color.withValues(alpha: 0.1),
             blurRadius: 8,
             offset: Offset(0, 2),
           ),
@@ -95,14 +153,13 @@ class _InfoCard extends StatelessWidget {
           Container(
             padding: EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.primary
-                  .withValues(alpha: 0.1),
+              color: color.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Icon(
-              Icons.location_on_rounded,
+              icon,
               size: 24,
-              color: Theme.of(context).colorScheme.primary,
+              color: color,
             ),
           ),
 
@@ -113,12 +170,17 @@ class _InfoCard extends StatelessWidget {
 
               children: [
                 Text(
-                  'CEP',
+                  title,
                   style: theme.textTheme.titleMedium?.copyWith(
-                    color: theme.colorScheme.primary,
+                    color: color,
                   ),
                 ),
-                Text('13502-620'),
+                Text(
+                  subtitle,
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    color: AppColors.textSecondary,
+                  ),
+                ),
               ],
             ),
           ),
