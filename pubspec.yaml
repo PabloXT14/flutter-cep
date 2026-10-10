@@ -38,6 +38,7 @@ dependencies:
   http: ^1.6.0
   mask_text_input_formatter: ^2.9.0
   solar_icons: ^0.2.0
+  flutter_launcher_icons: ^0.14.4
 
 dev_dependencies:
   flutter_test:
@@ -91,3 +92,11 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/app_icon.png"
+
+  # Configuração opcional para ícones adaptativos do Android
+  # adaptive_icon_background: "#FFFFFF"
+  # adaptive_icon_foreground: "assets/icons/app_icon.png"
