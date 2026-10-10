@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:solar_icons/solar_icons.dart';
 
 class NotFound extends StatelessWidget {
   final String errorMessage;
@@ -20,7 +21,12 @@ class NotFound extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Icon(Icons.error_outline_rounded, color: theme.colorScheme.error),
+          // Icon(Icons.error_outline_rounded, color: theme.colorScheme.error),
+          Icon(
+            SolarIconsOutline.danger,
+            color: theme.colorScheme.error,
+            size: 24,
+          ),
           SizedBox(width: 12),
           Expanded(
             child: Text(

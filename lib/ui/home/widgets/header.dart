@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:solar_icons/solar_icons.dart';
 
 class Header extends StatelessWidget {
   const new({super.key});
@@ -24,8 +25,8 @@ class Header extends StatelessWidget {
         spacing: 4,
         children: [
           Icon(
-            Icons.search_rounded,
-            size: 48,
+            SolarIconsOutline.magnifierZoomIn,
+            size: 40,
             color: theme.colorScheme.primary,
           ),
 

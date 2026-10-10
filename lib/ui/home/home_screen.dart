@@ -6,6 +6,7 @@ import 'package:flutter_cep/ui/home/widgets/header.dart';
 import 'package:flutter_cep/ui/home/widgets/not_found.dart';
 import 'package:http/http.dart' as http;
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:solar_icons/solar_icons.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -80,8 +81,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Consulta de CEP'),
-        leading: Icon(Icons.location_on),
+        title: Text(
+          'Consulta de CEP',
+          style: theme.textTheme.titleLarge?.copyWith(
+            color: theme.colorScheme.onPrimary,
+          ),
+        ),
+        leading: Icon(SolarIconsBold.mapPointWave),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(20),
@@ -97,7 +103,10 @@ class _HomeScreenState extends State<HomeScreen> {
               keyboardType: TextInputType.number,
               maxLength: 9,
               decoration: InputDecoration(
-                prefixIcon: Icon(Icons.search),
+                prefixIcon: Icon(
+                  SolarIconsOutline.mapPoint,
+                  color: theme.colorScheme.primary,
+                ),
                 labelText: 'CEP',
                 hintText: 'Digite o CEP (ex: 12345-678)',
                 counterText: '',
@@ -140,7 +149,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     )
                   : ElevatedButton.icon(
                       onPressed: fetchCep,
-                      icon: Icon(Icons.search_rounded),
+                      icon: Icon(
+                        SolarIconsOutline.magnifier,
+                        size: 20,
+                      ),
                       label: Text('Buscar CEP'),
                     ),
             ),

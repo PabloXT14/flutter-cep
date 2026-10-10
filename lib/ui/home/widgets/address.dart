@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cep/core/theme/app_colors.dart';
 import 'package:flutter_cep/domain/models/cep_model.dart';
+import 'package:solar_icons/solar_icons.dart';
 
 class Address extends StatelessWidget {
   final CepModel? cepModel;
@@ -34,7 +35,7 @@ class Address extends StatelessWidget {
           child: Column(
             children: [
               Icon(
-                Icons.check_circle_rounded,
+                SolarIconsBold.checkCircle,
                 size: 48,
                 color: Colors.white,
               ),
@@ -61,35 +62,35 @@ class Address extends StatelessWidget {
           spacing: 16,
           children: [
             _InfoCard(
-              icon: Icons.location_on_rounded,
+              icon: SolarIconsBold.mapPoint,
               color: theme.colorScheme.primary,
               title: 'CEP',
               subtitle: cepModel!.cep,
             ),
 
             _InfoCard(
-              icon: Icons.streetview_rounded,
+              icon: SolarIconsBold.streetsMapPoint,
               color: theme.colorScheme.secondary,
               title: 'Logradouro',
               subtitle: cepModel!.logradouro,
             ),
 
             _InfoCard(
-              icon: Icons.home_rounded,
+              icon: SolarIconsBold.home,
               color: theme.colorScheme.tertiary,
               title: 'Bairro',
               subtitle: cepModel!.bairro,
             ),
 
             _InfoCard(
-              icon: Icons.location_city_rounded,
+              icon: SolarIconsBold.city,
               color: AppColors.success,
               title: 'Cidade',
               subtitle: cepModel!.localidade,
             ),
 
             _InfoCard(
-              icon: Icons.map_rounded,
+              icon: SolarIconsBold.map,
               color: AppColors.warning,
               title: 'Estado',
               subtitle: cepModel!.estado,
@@ -97,7 +98,7 @@ class Address extends StatelessWidget {
 
             if (cepModel!.complemento.isNotEmpty)
               _InfoCard(
-                icon: Icons.info_rounded,
+                icon: SolarIconsOutline.infoSquare,
                 color: Colors.purple,
                 title: 'Complemento',
                 subtitle: cepModel!.complemento,
