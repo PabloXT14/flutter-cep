@@ -1,12 +1,13 @@
-<p align="center">
-  <img src="assets/icons/app_icon.png" alt="Ícone do aplicativo Consulta de CEP" width="140">
-</p>
+<h1 align="center">
+  <img
+    src=".github/app_logo.png"
+    title="Flutter CEP"
+    alt="Flutter CEP"
+    width="100px"
+  />
+</h1>
 
-# Flutter CEP
-
-Aplicativo mobile desenvolvido em Flutter para consultar endereços brasileiros a partir de um CEP. A aplicação consome a API pública [ViaCEP](https://viacep.com.br/) e apresenta os dados do endereço de forma simples e organizada.
-
-<!-- ## Demonstração -->
+Esta aplicação de nome **Flutter CEP**, consiste em um aplicativo mobile desenvolvido em Flutter para consultar endereços brasileiros a partir de um CEP. A aplicação consome a API pública [ViaCEP](https://viacep.com.br/) e apresenta os dados do endereço de forma simples e organizada.
 
 
 ## Funcionalidades
@@ -24,6 +25,53 @@ Aplicativo mobile desenvolvido em Flutter para consultar endereços brasileiros 
 - Feedback visual durante o carregamento.
 - Mensagens de erro para CEP inválido, inexistente ou falha na comunicação com a API.
 - Interface responsiva com tema visual próprio.
+
+## Demonstração
+
+### Tela de consulta de CEP vazia
+
+<p align="center">
+  <img 
+    src=".github/screens/cep-empty.jpeg" 
+    alt="CEP Empty Screen" 
+    title="CEP Empty Screen"
+    width="375px"
+  />
+</p>
+
+### Tela de validação do CEP
+
+<p align="center">
+  <img
+    src=".github/screens/cep-validation-error.jpeg" 
+    alt="CEP Validation Error Screen" 
+    title="CEP Validation Error Screen"
+    width="375px"
+  />
+</p>
+
+### Tela de CEP encontrado 01
+
+<p align="center">
+  <img 
+    src=".github/screens/find-cep-01.jpeg" 
+    alt="Find CEP Screen 01" 
+    title="Find CEP Screen 01" 
+    width="375px"
+  />
+</p>
+
+### Tela de CEP encontrado 02
+
+<p align="center">
+  <img 
+    src=".github/screens/find-cep-02.jpeg" 
+    alt="Find CEP Screen 02" 
+    title="Find CEP Screen 02"
+    width="375px"
+  />
+</p>
+
 
 ## Tecnologias utilizadas
 
